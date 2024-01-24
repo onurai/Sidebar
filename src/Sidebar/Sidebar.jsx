@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import './Sidebar.css'
-import { FaDropbox,FaSearch, FaRegHeart, FaRegBell, FaChartPie, FaRegMoon  } from "react-icons/fa";
+import { FaSearch, FaRegHeart, FaRegBell, FaChartPie, FaRegMoon  } from "react-icons/fa";
 import { RiArrowRightDoubleFill } from "react-icons/ri";
 import { IoHome, IoBarChartOutline, IoSunnyOutline } from "react-icons/io5";
 import { GiWallet } from "react-icons/gi";
 import { IoMdLogOut } from "react-icons/io";
+import { RxDashboard } from "react-icons/rx";
 
 const Sidebar = () => {
     const [dark, setDark] = useState(false);
@@ -41,12 +42,12 @@ const Sidebar = () => {
         <header>
             <div className="image-text">
                 <span className='image'>
-                    <FaDropbox className='dropBox'/>
+                    <RxDashboard size={30} className='dropBox'/>
                 </span>
 
                 <div className="text header-text">
-                    <span className='name'>CodingLab</span>
-                    <span className='profession'>Web developer</span>
+                    <span className='name'>Admin</span>
+                    <span className='profession'>Dashboard</span>
                 </div>
             </div>
 
