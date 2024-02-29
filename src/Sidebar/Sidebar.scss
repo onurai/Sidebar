@@ -19,6 +19,7 @@
                 align-items: center;
                 justify-content: center;
                 .dropBox{
+                    cursor: pointer;
                     width: 40px;
                     border-radius: 6px;
                     color: var(--text-color);
@@ -35,23 +36,6 @@
                 }
             }
         }
-        .toggle{
-            position: absolute;
-            top: 50%;
-            right: -25px;
-            transform: translateY(-50%) rotate(180deg);
-            height: 25px;
-            width: 25px;
-            background: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            color: var(--sidebar-color);
-            font-size: 22px;
-            cursor: pointer;
-            transition: var(--tran-03);
-        }
     }
 
     .menu-bar{
@@ -61,38 +45,8 @@
         justify-content: space-between;
         .menu{
             margin-top: 35px;
-            .search-box{
-                height: 50px;
-                margin-top: 10px;
-                list-style: none;
-                display: flex;
-                align-items: center;
-                background-color: var(--primary-color-light);
-                border-radius: 6px;
-                transition: var(--tran-05);
-                .icon{
-                    font-size: 20px;
-                    color: var(--text-color);
-                    min-width: 60px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    transition: var(--tran-02);
-                    cursor: pointer;
-                }
-                input{
-                    height: 100%;
-                    width: 100%;
-                    border: none;
-                    outline: none;
-                    border-radius: 6px;
-                    font-size: 16px;
-                    font-weight: 500;
-                    transition: var(--tran-05);
-                    background-color: var(--primary-color-light);
-                }
-            }
             ul{
+                padding: 0;
                 li{
                     height: 50px;
                     margin-top: 10px;
@@ -100,6 +54,7 @@
                     display: flex;
                     align-items: center;
                     a{
+                        text-decoration: none;
                         height: 100%;
                         width: 100%;
                         display: flex;
@@ -141,6 +96,7 @@
                 display: flex;
                 align-items: center;
                 a{
+                    text-decoration: none;
                     height: 100%;
                     width: 100%;
                     display: flex;
@@ -238,4 +194,3 @@
         opacity: 0;
     }
 }
-

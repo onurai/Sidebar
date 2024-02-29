@@ -1,6 +1,7 @@
 import './App.css';
 import Home from './Home/Home.jsx'
 import Sidebar from './Sidebar/Sidebar.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

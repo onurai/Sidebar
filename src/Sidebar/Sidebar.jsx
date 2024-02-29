@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import './Sidebar.css'
-import { FaSearch, FaRegHeart, FaRegBell, FaChartPie, FaRegMoon  } from "react-icons/fa";
-import { RiArrowRightDoubleFill } from "react-icons/ri";
-import { IoHome, IoBarChartOutline, IoSunnyOutline } from "react-icons/io5";
-import { GiWallet } from "react-icons/gi";
+import { FaRegMoon, FaUserSecret } from "react-icons/fa";
+import { IoHome, IoSunnyOutline } from "react-icons/io5";
 import { IoMdLogOut } from "react-icons/io";
 import { RxDashboard } from "react-icons/rx";
+import { SiTourbox } from "react-icons/si";
+import { FaUserTie, FaCommentDots } from "react-icons/fa6";
+import { FcSalesPerformance } from "react-icons/fc";
+import { IoMdLogIn } from "react-icons/io";
 
 const Sidebar = () => {
     const [dark, setDark] = useState(false);
@@ -13,17 +15,8 @@ const Sidebar = () => {
 
     const body = document.querySelector("body");
 
-    const searchHandler = () =>{
-        setNarrrow(false);
-    }
-
     const NarrowHandler = () => {
-        if(narrow === false){
-            setNarrrow(true)
-        }
-        else{
-            setNarrrow(false)
-        }
+        setNarrrow(!narrow);
     }
 
     const DarkHandler = () => {
@@ -42,7 +35,7 @@ const Sidebar = () => {
         <header>
             <div className="image-text">
                 <span className='image'>
-                    <RxDashboard size={30} className='dropBox'/>
+                    <RxDashboard onClick={NarrowHandler} size={30} className='dropBox'/>
                 </span>
 
                 <div className="text header-text">
@@ -50,17 +43,17 @@ const Sidebar = () => {
                     <span className='profession'>Dashboard</span>
                 </div>
             </div>
-
-            <RiArrowRightDoubleFill onClick={() => NarrowHandler()} className='toggle'/>
         </header>
 
         <div className="menu-bar">
             <div className="menu">
-                <li className='search-box'>
-                    <FaSearch className='icon' onClick={() => searchHandler()}/>
-                    <input type="text" placeholder='Search...' />
-                </li> 
                 <ul className='-menu-links'>
+                    <li className='nav-link'>
+                        <a href="#" onClick={(e) => e.preventDefault()}>
+                            <IoMdLogIn size={25} className='icon'/>
+                            <span className='text nav-text'>Login</span>
+                        </a>
+                    </li>
                     <li className='nav-link'>
                         <a href="#" onClick={(e) => e.preventDefault()}>
                             <IoHome className='icon'/>
@@ -69,41 +62,41 @@ const Sidebar = () => {
                     </li>  
                     <li className='nav-link'>
                         <a href="#" onClick={(e) => e.preventDefault()}>
-                            <IoBarChartOutline  className='icon'/>
-                            <span className='text nav-text'>Revenue</span>
+                            <FcSalesPerformance className='icon'/>
+                            <span className='text nav-text'>Orders</span>
+                        </a>
+                    </li>  
+                    <li className='nav-link'>
+                        <a href="#" onClick={(e) => e.preventDefault()}>
+                            <SiTourbox className='icon'/>
+                            <span className='text nav-text'>Tours</span>
                         </a>
                     </li>
                     <li className='nav-link'>
                         <a href="#" onClick={(e) => e.preventDefault()}>
-                            <FaRegBell className='icon'/>
-                            <span className='text nav-text'>Notifications</span>
+                            <FaCommentDots className='icon'/>
+                            <span className='text nav-text'>Tour Comments</span>
                         </a>
                     </li>
                     <li className='nav-link'>
                         <a href="#" onClick={(e) => e.preventDefault()}>
-                            <FaChartPie  className='icon'/>
-                            <span className='text nav-text'>Analytics</span>
+                            <FaUserTie className='icon'/>
+                            <span className='text nav-text'>Users</span>
                         </a>
                     </li>
                     <li className='nav-link'>
                         <a href="#" onClick={(e) => e.preventDefault()}>
-                            <FaRegHeart className='icon'/>
-                            <span className='text nav-text'>Likes</span>
+                            <FaUserSecret className='icon'/>
+                            <span className='text nav-text'>User Role</span>
                         </a>
                     </li>
-                    <li className='nav-link'>
-                        <a href="#" onClick={(e) => e.preventDefault()}>
-                            <GiWallet  className='icon'/>
-                            <span className='text nav-text'>Wallets</span>
-                        </a>
-                    </li> 
                 </ul>
             </div>
 
             <div className="bottom-content">
                 <li className=''>
                     <a href="#" onClick={(e) => e.preventDefault()}>
-                        <IoMdLogOut className='icon'/>
+                        <IoMdLogOut size={23} className='icon'/>
                         <span className='text nav-text'>Logout</span>
                     </a>
                 </li> 
